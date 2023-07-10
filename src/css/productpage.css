@@ -1,0 +1,56 @@
+div.con{
+   background-color: #eabfff;
+   color: #66023c;
+    /* background:url(https://marketplace.canva.com/EAFTQEWI-Ko/1/0/1600w/canva-black-sky-galaxy-stars-desktop-wallpaper-iWMZ0xN6KXs.jpg); */
+  /* color: white; */
+  width:100%;
+  height: 10 0vh;
+}
+div.cont{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+div.cont1{
+    width:50%;
+    
+}
+div.cont2{
+    display: flex;
+    flex-direction:column;}
+
+   button.btn{
+    /* background-color:blue; */
+    /* color: white;
+    bgc
+     */
+     color: #eabfff;
+     background-color:#300047 ;
+    /* width:10px; */
+    font-weight:bold;
+    /* border: 2px solid white; */
+   }
+   button.btn a{
+    color: #eabfff;
+    text-decoration: none;
+   }
+   button.btn:hover{
+    background-color:#66023c;
+    color: white;
+   }
+   h1{
+    color: yellow;
+   }
+   img.images{
+    width:100%;
+    height:80%;
+   }
+   .caro{
+    width:80%;
+    height:100vh;
+    object-fit: contain;
+    margin-left: 50px;
+   }
+   h3 span{
+    color: #300047;
+   }

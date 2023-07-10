@@ -1,0 +1,21 @@
+div.cons{ 
+    /* background-color: black; */
+    /* background:url(https://marketplace.canva.com/EAFTQEWI-Ko/1/0/1600w/canva-black-sky-galaxy-stars-desktop-wallpaper-iWMZ0xN6KXs.jpg); */
+    height: 100vh;
+    background-color:#eabfff;
+    /* background-color: black; */
+    /* color: white; */
+}
+label.form-label{
+    /* color: white; */
+    color:#300047;
+}
+label.form-check-label{
+    /* color: white; */
+    color:#300047;
+}
+a.lin{
+    text-decoration: none;
+    /* color: black; */
+    color:#300047;
+}
