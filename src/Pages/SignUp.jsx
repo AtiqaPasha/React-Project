@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '/src/css/signup.css'
-export default function SignUp() {
+export default function Signup() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
