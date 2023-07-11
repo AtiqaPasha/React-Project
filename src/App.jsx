@@ -1,63 +1,51 @@
 import React from 'react'
-import  { Route, Routes, Navigate} from "react-router-dom";
-import Home from './Pages/Home';
+import { Route, Routes, Navigate } from 'react-router-dom'
+import Home from './Pages/Home'
 
-import Page404 from './Pages/Page404';
-import Login from './Pages/Login';
-// import Signup from './Pages/Signup';
-import CategoryPage from './Pages/CategoryPage';
+import Page404 from './Pages/Page404'
+import Login from './Pages/Login'
+import Signup from './Pages/Signup'
+import CategoryPage from './Pages/CategoryPage'
 
-import { useState } from 'react';
-import ProductPage from './Pages/ProductPage';
-import Products from './Pages/Products';
+import { useState } from 'react'
+import ProductPage from './Pages/ProductPage'
+import Products from './Pages/Products'
+import { useContext } from 'react'
+import { UserContext } from './context/login/context'
 // import HeaderSection from './Components/HeaderSection';
 // import FooterSection from './Components/FooterSection';
 
-
-
-
 export default function App() {
+  const [user, setUser] = useState(false)
 
-const [user, setUser] = useState(false)
+  const { state, dispatch } = useContext(UserContext)
 
   return (
-<>
+    <>
+      {state.User ? (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:productID" element={<ProductPage />} />
+          <Route
+            path="/products/category/:categoryName"
+            element={<CategoryPage />}
+          />
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/signUp" element={<SignUp />} /> */}
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signUp" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
 
+          <Route path="*" element={<Navigate to="/login" replace={true} />} />
+        </Routes>
+      )}
 
-{
-  user ? (<Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/products" element={<Products />} />
-    <Route path="/products/:productID" element={<ProductPage />} />
-    <Route path="/products/category/:categoryName" element={<CategoryPage />} />
-    {/* <Route path="/login" element={<Login />} /> */}
-    {/* <Route path="/signUp" element={<SignUp />} /> */}
-    <Route path="*" element={<Page404 />} />
-   
-  </Routes>)
-  
-  : (<Routes>
-    <Route path="/" element={<Home />} />
-    {/* <Route path="/signUp" element={<Signup />} /> */}
-    <Route path="/login" element={<Login />} />
-  
-    
-    <Route path="*" element={<Navigate to="/login" replace={true} /> } />
-  </Routes>)
-}
-
-
-{/* <FooterSection/> */}
-
-</>
-
-    
+      {/* <FooterSection/> */}
+    </>
   )
 }
-
-
-
-
-
-
-

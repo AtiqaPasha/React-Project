@@ -7,18 +7,24 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
+    console.log("Yes")
+
     const newUser = {
       email,
       password,
     };
+
+    console.log(newUser)
   
-    // Save user to local storage
+    // // Save user to local storage
     localStorage.setItem('user', JSON.stringify(newUser));
   
-    // Redirect to the login page
+    // // Redirect to the login page
     navigateTo('/Login');
   };
   
@@ -138,9 +144,11 @@ export default function Signup() {
               {/* Error message */}
               {error && <p>{error}</p>}
               {/* Submit button */}
-              <button type="submit" className="btn btn-primary btn-lg btn-block w-100">
+              {/* <button type="submit" className="btn btn-primary btn-lg btn-block w-100">
                <a href="login">Login</a> 
-              </button>
+              </button> */}
+
+              <input type="submit" value="Signup"  className=' btn w-100' style={{ backgroundColor: '#300047', color: 'white' }}/>
               {/* Other buttons */}
             </form>
           </div>
